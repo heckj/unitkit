@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.8: http://docutils.sourceforge.net/" />
+<title>New In UnitKit 2</title>
+<link rel="stylesheet" href="../../default.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="new-in-unitkit-2">
+<h1 class="title">New In UnitKit 2</h1>
+<p>UnitKit 2 marks a maturing of UnitKit. What started out as a young and scrappy framework is now starting to grow up into something a bit more, well, useful. As UnitKit has been used, and abused, we've had a chance to kick the tires and see what's really needed. And, we've even managed to implement some of those needed things.</p>
+<div class="section" id="ukequal-and-uknotequal-test-macros">
+<h1><a name="ukequal-and-uknotequal-test-macros">UKEqual and UKNotEqual Test Macros</a></h1>
+<p>Possibly the biggest change from a user perspective is the appearance of the Swiss-Army knife of test macros, <tt class="docutils literal"><span class="pre">UKEqual</span></tt>, and its companion <tt class="docutils literal"><span class="pre">UKNotEqual</span></tt>. Taking on the testing functionality of <tt class="docutils literal"><span class="pre">UKIntsEqual</span></tt>, <tt class="docutils literal"><span class="pre">UKObjectsEqual</span></tt>, and <tt class="docutils literal"><span class="pre">UKStringsEqual</span></tt>, these new macros do even more. They can compare and determine equality for the following types:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">int</span></tt> and <tt class="docutils literal"><span class="pre">unsigned</span> <span class="pre">int</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">long</span></tt> and <tt class="docutils literal"><span class="pre">unsigned</span> <span class="pre">long</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">short</span></tt> and <tt class="docutils literal"><span class="pre">unsigned</span> <span class="pre">short</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">char</span></tt> and <tt class="docutils literal"><span class="pre">unsigned</span> <span class="pre">char</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">float</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">double</span></tt></li>
+<li>Any object, using the <tt class="docutils literal"><span class="pre">isEqual:</span></tt> method of <tt class="docutils literal"><span class="pre">NSObject</span></tt></li>
+<li>Any string of type <tt class="docutils literal"><span class="pre">NSString</span></tt> or its subclasses using the <tt class="docutils literal"><span class="pre">isEqualToString:</span></tt> method of <tt class="docutils literal"><span class="pre">NSString</span></tt></li>
+<li>Structs, including <tt class="docutils literal"><span class="pre">NSPoint</span></tt> and <tt class="docutils literal"><span class="pre">NSRange</span></tt></li>
+<li>Pointers</li>
+<li>Unions</li>
+</ul>
+<p>All of the necessary type detection is performed under the covers. What this means is that you can use <tt class="docutils literal"><span class="pre">UKEqual</span></tt> for most of your test needs.</p>
+<p><strong>Update with ``long long`` information once available.</strong></p>
+</div>
+<div class="section" id="growl-integration">
+<h1><a name="growl-integration">Growl Integration</a></h1>
+<p><strong>more</strong></p>
+</div>
+<div class="section" id="internal-notification-system">
+<h1><a name="internal-notification-system">Internal Notification System</a></h1>
+<p><strong>more</strong></p>
+</div>
+<div class="section" id="html-based-documentation">
+<h1><a name="html-based-documentation">HTML Based Documentation</a></h1>
+<p><strong>more</strong></p>
+</div>
+<div class="section" id="other-new-features">
+<h1><a name="other-new-features">Other New Features</a></h1>
+<ul class="simple">
+<li><strong>list</strong></li>
+</ul>
+</div>
+</div>
+<p class="footer">Copyright &copy;2005 James Duncan Davidson and contributors. The content of this website is licensed under a <a href="http://creativecommons.org/licenses/by-sa/2.0/">Creative Commons License</a></p></body>
+</html>

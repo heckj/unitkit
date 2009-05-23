@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.8: http://docutils.sourceforge.net/" />
+<title>UnitKit Tutorial</title>
+<link rel="stylesheet" href="../../default.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="unitkit-tutorial">
+<h1 class="title">UnitKit Tutorial</h1>
+<p>This quick tutorial will show you how to get started with UnitKit. It uses a project that is already on your system, the venerable Temperature Converter project, to show you the steps that are required to add unit tests to your codebase.</p>
+<div class="section" id="prerequisites">
+<h1><a name="prerequisites">Prerequisites</a></h1>
+<p>Before going through this tutorial, make sure that you've got</p>
+<ul class="simple">
+<li>The latest version of UnitKit installed on your system. See the <a class="reference" href="installation.html">installation</a> page if you need to install UnitKit.</li>
+<li>The latest version of Xcode Tools. On Panther, this is Xcode 1.5.</li>
+</ul>
+<p>This tutorial should work just fine with other versions of Xcode and UnitKit, but your mileage may vary.</p>
+</div>
+<div class="section" id="the-temperature-converter-project">
+<h1><a name="the-temperature-converter-project">The Temperature Converter Project</a></h1>
+<div class="image image-reference"><a class="reference" href="file:///Developer/Examples/AppKit/TemperatureConverter/Temperature%20Converter.xcode"><img alt="images/temperatureConverterIcon.png" class="floatright" src="images/temperatureConverterIcon.png" /></a></div>
+<p>The Temperature Converter project is located in the <tt class="docutils literal"><span class="pre">/Developer/Examples/AppKit</span></tt> folder. As a convenience, you can easily locate in the Finder by clicking on the file icon to the right. Double-click on the project file in Finder to open the project in Xcode. Once opened, build and run the project to get a feeling for how the application works.</p>
+<p>The primary logic of the Temperature Converter application is composed of three <tt class="docutils literal"><span class="pre">NSValueTransformer</span></tt> subclasses that are wired to the user interface using Cocoa Bindings along with a bit of glue logic in the <tt class="docutils literal"><span class="pre">ApplicationDelegate</span></tt> class. The value transformers convert Centigrate, Fahrenheit, and Rankine temperatures to Kelvin.</p>
+<div class="image"><img alt="images/temperatureConverterClasses.gif" class="croppedscreenshot" src="images/temperatureConverterClasses.gif" /></div>
+<p>The value transformers are found in the following three classes:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">CentigradeValueTransformer</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">FahrenheitValueTransformer</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RankineValueTransfomer</span></tt></li>
+</ul>
+<p>Each of these classes implmenets two transformation methods defined by the <tt class="docutils literal"><span class="pre">NSValueTransformer</span></tt> class: <tt class="docutils literal"><span class="pre">transformedValue:</span></tt> and <tt class="docutils literal"><span class="pre">reverseTransformedValue:</span></tt>. To fully test the logic of the application, we  need to provide tests which will exercise these transformer methods on each of the transformer classes and make sure that for a range of given inputs, we get the correct outputs.</p>
+</div>
+<div class="section" id="add-a-test-bundle-target">
+<h1><a name="add-a-test-bundle-target">Add a Test Bundle Target</a></h1>
+<p>The first step to adding the value transformer tests is to add a <em>UnitKit Test Bundle</em> target to the project. This will give you the ability to compile your tests seperate from your application and create a dependancy in Xcode so that compilation of the Temperature Converter application will require that all tests pass. To add the target, use the <strong>Project &gt; New Target</strong> menu and then select  <strong>UnitKit Bundle</strong> in the New Target Assistant.</p>
+<div class="image"><img alt="images/newTargetAssistant.gif" class="croppedscreenshot" src="images/newTargetAssistant.gif" /></div>
+<p>The next dialog that will appear will let you name the target. Name it <em>TemperatureConverterTests</em> and hit the Finish button.</p>
+<p>Add the UnitKit Framework. This step is necessary so that the tests can link against the framework and everything can work well. (If I could I'd get rid of this bugaboo).</p>
+<p>Project &gt; Add To Project, Navigate to /Library/Frameworks/UnitKit.framework and hit the add button.</p>
+<div class="image"><img alt="images/ukFrameworkLocation.gif" class="croppedscreenshot" src="images/ukFrameworkLocation.gif" /></div>
+</div>
+<div class="section" id="add-the-unitkit-framework-to-the-project">
+<h1><a name="add-the-unitkit-framework-to-the-project">Add the UnitKit Framework to the Project</a></h1>
+</div>
+<div class="section" id="add-test-classes-to-the-test-bundle">
+<h1><a name="add-test-classes-to-the-test-bundle">Add Test Classes to the Test Bundle</a></h1>
+</div>
+<div class="section" id="build-the-test-target-to-test">
+<h1><a name="build-the-test-target-to-test">Build the Test Target to Test</a></h1>
+</div>
+</div>
+<p class="footer">Copyright &copy;2005 James Duncan Davidson and contributors. The content of this website is licensed under a <a href="http://creativecommons.org/licenses/by-sa/2.0/">Creative Commons License</a></p></body>
+</html>

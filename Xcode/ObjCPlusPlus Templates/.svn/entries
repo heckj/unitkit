@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="129"
+   name=""
+   committed-date="2005-03-12T01:03:09.055540Z"
+   url="https://svn.x180.net/public/unitkit/trunk/Xcode/ObjCPlusPlus%20Templates"
+   last-author="duncan@x180.net"
+   kind="dir"
+   uuid="a3be01a7-01ef-0310-8295-84c0bbc985d3"
+   revision="136"/>
+<entry
+   committed-rev="129"
+   name="TemplateInfo.plist"
+   text-time="2005-03-12T05:21:04.000000Z"
+   committed-date="2005-03-12T01:03:09.055540Z"
+   checksum="5e189d4e62b80e94729bb0f7712c6f24"
+   last-author="duncan@x180.net"
+   kind="file"
+   prop-time="2005-03-12T05:21:04.000000Z"/>
+<entry
+   committed-rev="129"
+   name="class.h"
+   text-time="2005-03-12T05:21:04.000000Z"
+   committed-date="2005-03-12T01:03:09.055540Z"
+   checksum="4740735249318178bffd56c55e5ec429"
+   last-author="duncan@x180.net"
+   kind="file"
+   prop-time="2005-03-12T05:21:04.000000Z"/>
+<entry
+   committed-rev="129"
+   name="class.mm"
+   text-time="2005-03-12T05:21:04.000000Z"
+   committed-date="2005-03-12T01:03:09.055540Z"
+   checksum="3f04ed6f7d87354992fd1d74d0014a70"
+   last-author="duncan@x180.net"
+   kind="file"
+   prop-time="2005-03-12T05:21:04.000000Z"/>
+</wc-entries>

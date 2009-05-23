@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# This shell script runs ukrun_private after first finding it and setting
+# up any needed DYLD_FRAMEWORK_SEARCH_PATH stuff.
+
+# ---------------
+# First, locate ukrun_private. If it's in the same directory as this script,
+# then use it. If not, then search through the framework locations to find
+# the UnitKit framework and pick it up out of there.
+# ---------------
+
+BASE=`dirname $0`
+
+if [ -f ${BASE}/ukrun_private ]
+then
+  UKRUN_PRIVATE=${BASE}/ukrun_private
+elif [ -d ${HOME}/Library/Frameworks/UnitKit.framework ]
+then
+  UKRUN_PRIVATE=${HOME}/Library/Frameworks/UnitKit.framework/Resources/ukrun_private
+elif [ -d /Library/Frameworks/UnitKit.framework ]
+then
+  UKRUN_PRIVATE=/Library/Frameworks/UnitKit.framework/Resources/ukrun_private
+else
+  echo "Fatal: Can't find UnitKit framework"
+  exit
+fi
+
+# ---------------
+# Set up the framework paths appropriately
+# ---------------
+
+if [ $LIBRARY_SEARCH_PATHS ]
+then
+  if [ $DYLD_FRAMEWORK_PATH ]
+  then
+    export DYLD_FRAMEWORK_PATH=${LIBRARY_SEARCH_PATHS}:${DYLD_FRAMEWORK_PATH}
+  else
+    export DYLD_FRAMEWORK_PATH=${LIBRARY_SEARCH_PATHS}
+  fi
+else
+  # we are probably being executed directly from the command line, insert dir
+  # that this script is located on
+  if [ $DYLD_FRAMEWORK_PATH ]
+  then
+    export DYLD_FRAMEWORK_PATH=${BASE}:${DYLD_FRAMEWORK_PATH}
+  else
+    export DYLD_FRAMEWORK_PATH=${BASE}
+  fi
+fi
+
+# ---------------
+# Now, execute ukrun_private
+# ---------------
+
+$UKRUN_PRIVATE $*

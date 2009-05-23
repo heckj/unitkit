@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.8: http://docutils.sourceforge.net/" />
+<title>Building UnitKit 2</title>
+<link rel="stylesheet" href="../../default.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="building-unitkit-2">
+<h1 class="title">Building UnitKit 2</h1>
+<p>Using the Installer is the easiest way to set up UnitKit for use on a system. If you are working on UnitKit, however, or want to configure it for some specialized purpose, then building UnitKit from scratch is probably the right thing to do. The first thing to do is to get ahold of the source code. You can either download the source code archive <strong>(not yet availalbe)</strong> or you can check it out from its Subversion repository.</p>
+<div class="section" id="checking-out-the-source-from-subversion">
+<h1><a name="checking-out-the-source-from-subversion">Checking Out the Source From Subversion</a></h1>
+<p>To do this, you'll need Subversion installed on your system. If you don't yet have Subversion set up, you'll need to get it from the <a class="reference" href="http://tigris.subversion.org/">Subversion website</a>. Once you are set up with Subversion, you can check out the UnitKit repository with the following command:</p>
+<pre class="literal-block">
+$ svn co https://svn.x180.net/public/unitkit/trunk [destination]
+</pre>
+<p><strong>Add instructions about tags and destinations and what not</strong></p>
+</div>
+<div class="section" id="the-source-code-tree">
+<h1><a name="the-source-code-tree">The Source Code Tree</a></h1>
+<p><strong>Coming</strong></p>
+</div>
+<div class="section" id="performing-a-system-install">
+<h1><a name="performing-a-system-install">Performing a System Install</a></h1>
+<p>There are two ways that you can install UnitKit on your system from the source tree. The first is to use the <tt class="docutils literal"><span class="pre">xcodebuild</span></tt> command:</p>
+<pre class="literal-block">
+$ xcodebuild -buildstyle Deployment -target ukrun DSTROOT=/ install
+</pre>
+<p>All of UnitKit's components will be installed into the same location as the Installer package would place them.</p>
+<p>The second way to install is to use the Makefile included with the UnitKit source tree:</p>
+<pre class="literal-block">
+$ make install
+</pre>
+<p>Installing with the makefile also takes care of cleaning up the build tree before and after.</p>
+</div>
+<div class="section" id="installing-into-your-home-directory">
+<h1><a name="installing-into-your-home-directory">Installing Into Your Home Directory</a></h1>
+<p>Some developers prefer installing UnitKit into their home directory rather than at the system root. To install UnitKit into your home directory, execute the following:</p>
+<pre class="literal-block">
+$ make install-user
+</pre>
+<p>This will install the UnitKit framework and Xcode integration files into your <tt class="docutils literal"><span class="pre">~/Library</span></tt> folder and the <tt class="docutils literal"><span class="pre">ukrun</span></tt> executable into <tt class="docutils literal"><span class="pre">~bin</span></tt>.</p>
+</div>
+</div>
+<p class="footer">Copyright &copy;2005 James Duncan Davidson and contributors. The content of this website is licensed under a <a href="http://creativecommons.org/licenses/by-sa/2.0/">Creative Commons License</a></p></body>
+</html>
